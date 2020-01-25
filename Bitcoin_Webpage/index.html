@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+            background: #F1F1F1;
+        }
+
+        /* Style the header */
+        header {
+            position: fixed;
+            padding: 30px 0;
+            color: white;
+            z-index: 9;
+            width: 100%;
+            background: #F1F1F1;
+        }
+
+        /* Container for flexboxes */
+
+        /* Style the navigation menu */
+        nav {
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            background: #ccc;
+            padding: 20px;
+        }
+
+        /* Style the list inside the menu */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Style the content */
+        article {
+            -webkit-flex: 3;
+            -ms-flex: 3;
+            flex: 3;
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #777;
+            text-align: center;
+            color: white;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 9;
+        }
+
+        .container {
+            max-width: 1300px;
+            padding: 0 15px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+        }
+
+        /* main content layout */
+        #main-content {
+            display: flex;
+            padding: 110px 0 50px;
+            z-index: 1;
+            position: relative;
+        }
+
+        #header_wide {
+            background: white;
+            max-height: 60px;
+        }
+
+        #header-inner {
+            display: flex;
+            align-items: center;
+            position: relative;
+            justify-content: space-between;
+            color: black;
+        }
+
+        #logo {
+            display: flex;
+            align-items: center;
+            padding-left: 100px;
+        }
+
+        #logo img {
+            max-width: 80px;
+            position: absolute;
+            left: 0;
+            top: -15px;
+            border-radius: 50px;
+            border: 3px solid white;
+
+        }
+
+        #logo-text {
+            font-size: 1.2em;
+        }
+
+        #menu ul {
+            list-style-type: none;
+            margin: 1em 0;
+            padding: 0;
+
+        }
+
+        #menu ul li {
+            display: inline-block;
+            padding-left: 20px;
+            vertical-align: middle;
+        }
+
+        a,
+        a:hover {
+            text-decoration: none;
+        }
+
+        #menu ul li#tablet-logo {
+            display: none;
+        }
+
+        #tablet-logo img {
+            border-radius: 50px;
+            border: 3px solid white;
+            max-width: 80px;
+        }
+
+        #tablet-logo-text {
+            display: none;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        #mobile-menu {
+            display: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-transform: uppercase;
+        }
+
+        #icon-part {
+            padding-top: 30px;
+        }
+
+        #icon-part,
+        #icon-part>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #icon-part img {
+            max-width: 140px;
+            margin: 0 25px;
+        }
+
+        #review-item>p {
+            margin-top: 0;
+        }
+
+        #review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        #review-header img {
+            max-width: 20px;
+            margin-right: 10px;
+            border: 2px solid white;
+        }
+
+        #user-name {
+            text-align: right;
+        }
+
+        #sidebar-content {
+            margin-bottom: 40px;
+        }
+
+        #sidebar-content>div {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        #sidebar-content>div div {
+            text-transform: uppercase;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        #sidebar-content img {
+            max-width: 50px;
+            margin-right: 15px;
+            border: 2px solid white;
+        }
+
+        #page-content-inner {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        #page-content-inner>div {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        #page-content-inner>div img {
+            width: 48%;
+        }
+
+        #page-content {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        #left-content {
+            max-width: 66.66%;
+            flex-basis: 66.66%;
+            padding: 0 15px;
+        }
+
+        #sidebar {
+            padding: 0 15px;
+            max-width: 33.33%;
+            flex-basis: 33.33%;
+        }
+
+        /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+        @media (max-width: 800px) {
+            #page-content h3{
+                text-align: center;
+            }
+            #logo {
+                display: none;
+            }
+
+            #menu ul li#tablet-logo {
+                display: inline-block;
+            }
+
+            #header-inner {
+                justify-content: center;
+            }
+
+            #menu ul {
+                margin-top: -10px;
+                margin-bottom: 0;
+            }
+
+            #menu ul li {
+                padding: 0 15px;
+            }
+
+            #tablet-logo-text {
+                display: block;
+            }
+
+            #main-content {
+                padding: 150px 0 50px;
+            }
+
+            #icon-part img {
+                max-width: 85px;
+                margin: 3px;
+            }
+
+            #page-content {
+                flex-direction: column;
+            }
+
+            #left-content,
+            #sidebar {
+                max-width: 100%;
+                flex-basis: 100%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            #menu ul li {
+                padding: 0 5px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #page-content-inner>div img {
+                width: 100%;
+                margin-bottom: 25px;
+            }
+            #page-content-inner>div {
+                flex-direction: column;
+                margin-bottom: 0;
+            }
+            #icon-part img {
+                max-width: 85px;
+                margin: 10px;
+            }
+            #icon-part{
+                flex-direction: column;
+            }
+            #main-content {
+                padding: 180px 0 50px;
+            }
+            #menu ul li {
+                display: none;
+                padding: 0;
+            }
+
+            #tablet-logo {
+                display: inline-block !important;
+            }
+
+            #menu ul {
+                text-align: center;
+            }
+
+            #mobile-menu {
+                display: block;
+                padding-top: 40px;
+            }
+
+            #mobile-menu ul {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                width: 100%;
+            }
+
+            #mobile-menu ul li {
+                display: inline-block;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="header_wide">
+            <div class="container">
+                <div id="header-inner">
+                    <div id="logo">
+                        <img src="bitcoin-icon.png">
+                        <div id="logo-text"><b>Spigot</b>designs</div>
+                    </div>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li id="tablet-logo"><img src="bitcoin-icon.png"></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Service</a></li>
+                        </ul>
+                        <div id="tablet-logo-text"><b>Spigot</b>designs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Service</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="main-content">
+        <div class="container">
+            <h1 id="page-title" style="text-align: center;">Visual Design & Web development</h1>
+            <h3 style="text-align: center;">Form park city, utah</h3>
+            <div id="icon-part">
+                <div>
+                    <img src="bitcoin-icon.png">
+                    <img src="bitcoin-icon.png">
+                </div>
+                <div>
+                    <img src="bitcoin-icon.png">
+                    <img src="bitcoin-icon.png">
+                </div>
+            </div>
+            <div id="page-content">
+                <div id="left-content">
+                    <h3>Main Content</h3>
+                    <div id="page-content-inner">
+                        <div>
+                            <img src="Image_1.png">
+                            <img src="Images_1.png">
+                        </div>
+                        <div>
+                            <img src="image_2.png">
+                            <img src="images_2.png">
+                        </div>
+                    </div>
+                </div>
+                <div id="sidebar">
+                    <h3>SideBar</h3>
+                    <div id="sidebar-content">
+                        <div>
+                            <img src="bitcoin-icon.jpg">
+                            <div>This is sidebar heading title</div>
+                        </div>
+                        <div>
+                            <img src="bitcoin-icon.jpg">
+                            <div>This is sidebar heading title</div>
+                        </div>
+                        <div>
+                            <img src="bitcoin-icon.jpg">
+                            <div>This is sidebar heading title</div>
+                        </div>
+                    </div>
+                    <div id="sidebar-review">
+                        <div id="review-item">
+                            <div id="review-header">
+                                <img src="bitcoin-icon.jpg">
+                                <p>username | <b>2019.10.11</b></p>
+                            </div>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s</p>
+                            <p id="user-name">- your name</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Footer</p>
+    </footer>
+    <style>
+
+    </style>
+</body>
+
+</html>
